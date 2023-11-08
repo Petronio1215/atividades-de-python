@@ -1,0 +1,1178 @@
+ATIVIDADE DA USP
+
+1.
+
+for numero in range(1000, 2001):
+
+ if numero % 11 == 5:
+ print(numero)
+
+2.
+
+n = int(input("Digite um valor inteiro e positivo (n): "))
+
+if n <= 0:
+
+ print("Por favor, insira um valor inteiro e positivo.")
+
+else:
+
+ S = 0
+ for i in range(1, n + 1):
+ S += 1 / i
+
+ print(f"A soma S da série é: {S:.2f}")
+
+3.
+
+for numero in range(1, 11):
+ print(f"Tabuada do {numero}:")
+ for multiplicador in range(1, 11):
+ resultado = numero * multiplicador
+
+ print(f"{numero} x {multiplicador} = {resultado}")
+
+ print()
+
+4.
+
+grupos = []
+
+for i in range(5):
+ grupo = []
+
+ for j in range(4):
+ valor = int(input(f"Digite o {j+1}º valor do grupo {i+1}: "))
+ grupo.append(valor)
+ grupos.append(grupo)
+print("Grupos na ordem lida:")
+for grupo in grupos:
+ print(grupo)
+print("Grupos em ordem crescente:")
+for grupo in sorted(grupos):
+ print(grupo)
+print("Grupos em ordem decrescente:")
+for grupo in sorted(grupos, reverse=True):
+ print(grupo)
+
+5.
+
+clientes = []
+num_clientes = 15
+
+for cliente in range(1, num_clientes + 1):
+ nome = input(f"Digite o nome do cliente {cliente}: ")
+ valor_compras = float(input(f"Digite o valor de compras no ano passado para
+{nome}: "))
+
+ if valor_compras < 1000:
+ bonus = valor_compras * 0.10
+
+ else:
+
+ bonus = valor_compras * 0.15
+ clientes.append((nome, bonus))
+
+print("Bônus dos clientes:")
+for nome, bonus in clientes:
+
+ print(f"Cliente: {nome}, Bônus: R${bonus:.2f}")
+
+6.
+
+preco_base = 5.00
+num_ingressos_inicial = 120
+despesas = 200.00
+lucro_maximo = 0
+preco_maximo = 0
+vendas_maximo = 0
+
+for preco_ingresso in range(500, 0, -50): # Variando de 500 (R$ 5,00) a 100 (R$
+1,00) em incrementos de 50 centavos
+ preco_ingresso /= 100.0 # Convertendo para formato decimal
+ novo_num_ingressos = num_ingressos_inicial + 26 # Aumento nas vendas
+ novo_lucro = (preco_ingresso * novo_num_ingressos) - despesas # Cálculo
+do lucro
+
+ if novo_lucro > lucro_maximo:
+ lucro_maximo = novo_lucro
+ preco_maximo = preco_ingresso
+ vendas_maximo = novo_num_ingressos
+print("Tabela de Lucros Esperados:")
+print("Preço do Ingresso | Lucro Esperado")
+for preco_ingresso in range(500, 0, -50):
+ preco_ingresso /= 100.0
+ novo_num_ingressos = num_ingressos_inicial + 26
+ novo_lucro = (preco_ingresso * novo_num_ingressos) - despesas
+
+ print(f"R$ {preco_ingresso:.2f} | R$ {novo_lucro:.2f}")
+
+print("\nLucro Máximo Esperado:")
+
+print(f"Preço do Ingresso: R$ {preco_maximo:.2f}")
+
+print(f"Quantidade de Ingressos Vendidos: {vendas_maximo}")
+
+
+print(f"Lucro Máximo Esperado: R$ {lucro_maximo:.2f}")
+
+7.
+
+maiores_dezoito = 0
+for i in range(10):
+ idade = int(input(f"Digite a idade da pessoa {i + 1}: "))
+
+ if idade >= 18:
+ maiores_dezoito += 1
+
+print(f"A quantidade de pessoas com 18 anos ou mais é: {maiores_dezoito}")
+
+8.
+
+faixa1 = faixa2 = faixa3 = faixa4 = faixa5 = 0
+
+for i in range(15):
+ idade = int(input(f"Digite a idade da pessoa {i + 1}: "))
+
+ if idade <= 15:
+ faixa1 += 1
+
+ elif 16 <= idade <= 30:
+ faixa2 += 1
+
+ elif 31 <= idade <= 45:
+ faixa3 += 1
+
+ elif 46 <= idade <= 60:
+ faixa4 += 1
+
+ else:
+
+ faixa5 += 1
+total_pessoas = faixa1 + faixa2 + faixa3 + faixa4 + faixa5
+porcentagem_primeira_faixa = (faixa1 / total_pessoas) * 100
+porcentagem_ultima_faixa = (faixa5 / total_pessoas) * 100
+
+print("Quantidade de pessoas em cada faixa etária:")
+
+print("Até 15 anos:", faixa1)
+
+print("De 16 a 30 anos:", faixa2)
+
+print("De 31 a 45 anos:", faixa3)
+
+print("De 46 a 60 anos:", faixa4)
+
+print("Acima de 61 anos:", faixa5)
+
+print("\nPorcentagem de pessoas na primeira e na última faixa etária:")
+
+print(f"Primeira faixa etária: {porcentagem_primeira_faixa:.2f}%")
+
+print(f"Última faixa etária: {porcentagem_ultima_faixa:.2f}%")
+
+9.
+
+numero = int(input("Digite um número para calcular a tabuada: "))
+for i in range(1, 11):
+ resultado = numero * i
+
+ print(f"{numero} x {i} = {resultado}")
+
+10.
+
+for numero in range(1, 11):
+
+ print(f"Tabuada do {numero}:")
+ for multiplicador in range(1, 11):
+ resultado = numero * multiplicador
+
+ print(f"{numero} x {multiplicador} = {resultado}")
+
+ print()
+
+11.
+
+total_compras_a_vista = 0
+total_compras_a_prazo = 0
+
+for i in range(15):
+ codigo = input(f"Digite o código da transação (V para à vista, P para a prazo)
+da transação {i + 1}: ")
+ valor = float(input(f"Digite o valor da transação {i + 1}: "))
+
+ if codigo == 'V':
+ total_compras_a_vista += valor
+
+ elif codigo == 'P':
+ total_compras_a_prazo += valor
+total_compras = total_compras_a_vista + total_compras_a_prazo
+primeira_prestacao = total_compras_a_prazo / 3
+print(f"Valor total das compras à vista: R$ {total_compras_a_vista:.2f}")
+print(f"Valor total das compras a prazo: R$ {total_compras_a_prazo:.2f}")
+print(f"Valor total das compras efetuadas: R$ {total_compras:.2f}")
+print(f"Valor da primeira prestação das compras a prazo: R$
+{primeira_prestacao:.2f}")
+
+12.
+
+pessoas_acima_50_anos = 0
+alturas_10_20_anos = 0
+peso_inferior_40 = 0
+total_pessoas = 25
+
+for i in range(total_pessoas):
+ idade = int(input(f"Digite a idade da pessoa {i + 1}: "))
+ altura = float(input(f"Digite a altura da pessoa {i + 1} (em metros): "))
+ peso = float(input(f"Digite o peso da pessoa {i + 1} (em quilos): "))
+
+ if idade > 50:
+ pessoas_acima_50_anos += 1
+
+ if 10 <= idade <= 20:
+ alturas_10_20_anos += altura
+
+ if peso < 40:
+ peso_inferior_40 += 1
+media_alturas_10_20_anos = alturas_10_20_anos / total_pessoas
+porcentagem_peso_inferior_40 = (peso_inferior_40 / total_pessoas) * 100
+print(f"Quantidade de pessoas com idade superior a 50 anos:
+{pessoas_acima_50_anos}")
+print(f"Média das alturas das pessoas com idade entre 10 e 20 anos:
+{media_alturas_10_20_anos:.2f} metros")
+print(f"Porcentagem de pessoas com peso inferior a 40 quilos:
+{porcentagem_peso_inferior_40:.2f}%")
+
+13.
+
+pessoas_mais_de_90_quilos = 0
+soma_idades = 0
+
+for i in range(7):
+ idade = int(input(f"Digite a idade da pessoa {i + 1}: "))
+ peso = float(input(f"Digite o peso da pessoa {i + 1} (em quilos): "))
+
+ if peso > 90:
+ pessoas_mais_de_90_quilos += 1
+ soma_idades += idade
+media_idades = soma_idades / 7
+
+print(f"Quantidade de pessoas com mais de 90 quilos:
+{pessoas_mais_de_90_quilos}")
+
+print(f"Média das idades das sete pessoas: {media_idades:.2f} anos")
+
+14.
+
+pessoas_acima_50_anos_peso_inferior_60 = 0
+soma_idades_altura_inferior_150 = 0
+quantidade_pessoas_olhos_azuis = 0
+quantidade_ruivas_sem_olhos_azuis = 0
+total_pessoas = 20
+
+for i in range(total_pessoas):
+ idade = int(input(f"Digite a idade da pessoa {i + 1}: "))
+ peso = float(input(f"Digite o peso da pessoa {i + 1} (em quilos): "))
+ altura = float(input(f"Digite a altura da pessoa {i + 1} (em metros): "))
+ cor_olhos = input(f"Digite a cor dos olhos (A - Azul, P - Preto, V - Verde, C -
+Castanho) da pessoa {i + 1}: ")
+ cor_cabelos = input(f"Digite a cor dos cabelos (P - Preto, C - Castanho, L -
+Louro, R - Ruivo) da pessoa {i + 1}: ")
+
+ if idade > 50 and peso < 60:
+ pessoas_acima_50_anos_peso_inferior_60 += 1
+
+ if altura < 1.50:
+ soma_idades_altura_inferior_150 += idade
+
+ if cor_olhos == 'A':
+ quantidade_pessoas_olhos_azuis += 1
+
+ if cor_cabelos == 'R' and cor_olhos != 'A':
+ quantidade_ruivas_sem_olhos_azuis += 1
+
+if soma_idades_altura_inferior_150 > 0:
+ media_idades_altura_inferior_150 = soma_idades_altura_inferior_150 /
+total_pessoas
+
+else:
+
+ media_idades_altura_inferior_150 = 0
+porcentagem_olhos_azuis = (quantidade_pessoas_olhos_azuis / total_pessoas)
+* 100
+print(f"Quantidade de pessoas com idade superior a 50 anos e peso inferior a 60
+quilos: {pessoas_acima_50_anos_peso_inferior_60}")
+print(f"Média das idades das pessoas com altura inferior a 1,50 metros:
+{media_idades_altura_inferior_150:.2f} anos")
+print(f"Porcentagem de pessoas com olhos azuis:
+{porcentagem_olhos_azuis:.2f}%")
+print(f"Quantidade de pessoas ruivas sem olhos azuis:
+{quantidade_ruivas_sem_olhos_azuis}")
+
+15.
+
+quantidade_numeros_entre_30_e_90 = 0
+
+for i in range(10):
+ numero = float(input(f"Digite o número {i + 1}: "))
+
+ if 30 <= numero <= 90:
+ quantidade_numeros_entre_30_e_90 += 1
+
+print(f"A quantidade de números entre 30 e 90 é:
+{quantidade_numeros_entre_30_e_90}")
+
+16.
+
+soma_idades = 0
+pessoas_peso_90_altura_150 = 0
+pessoas_10_30_anos_mais_190 = 0
+
+for i in range(10):
+ idade = int(input(f"Digite a idade da pessoa {i + 1}: "))
+ peso = float(input(f"Digite o peso da pessoa {i + 1} (em quilos): "))
+ altura = float(input(f"Digite a altura da pessoa {i + 1} (em metros): "))
+ soma_idades += idade
+
+ if peso > 90 and altura < 1.50:
+ pessoas_peso_90_altura_150 += 1
+
+ if 10 <= idade <= 30 and altura > 1.90:
+ pessoas_10_30_anos_mais_190 += 1
+media_idades = soma_idades / 10
+porcentagem_10_30_anos_mais_190 = (pessoas_10_30_anos_mais_190 / 10)
+* 100
+print(f"Média das idades das dez pessoas: {media_idades:.2f} anos")
+print(f"Quantidade de pessoas com peso superior a 90 quilos e altura inferior a
+1,50 metros: {pessoas_peso_90_altura_150}")
+print(f"Porcentagem de pessoas com idade entre 10 e 30 anos e altura superior
+a 1,90 metros: {porcentagem_10_30_anos_mais_190:.2f}%")
+
+17.
+
+soma_idades = 0
+soma_idades_mulheres = 0
+soma_idades_homens = 0
+total_pessoas = 7
+total_mulheres = 0
+
+for i in range(total_pessoas):
+ idade = int(input(f"Digite a idade da pessoa {i + 1}: "))
+ sexo = input(f"Digite o sexo da pessoa {i + 1} (M para masculino, F para
+feminino): ")
+ soma_idades += idade
+
+ if sexo == 'F':
+ soma_idades_mulheres += idade
+ total_mulheres += 1
+
+ elif sexo == 'M':
+ soma_idades_homens += idade
+idade_media_grupo = soma_idades / total_pessoas
+
+if total_mulheres > 0:
+ idade_media_mulheres = soma_idades_mulheres / total_mulheres
+
+else:
+
+ idade_media_mulheres = 0
+idade_media_homens = soma_idades_homens / (total_pessoas -
+total_mulheres)
+
+print(f"Idade média do grupo: {idade_media_grupo:.2f} anos")
+print(f"Idade média das mulheres: {idade_media_mulheres:.2f} anos")
+print(f"Idade média dos homens: {idade_media_homens:.2f} anos")
+
+18.
+
+valor_carro = float(input("Digite o valor do carro: "))
+preco_final_vista = valor_carro * 0.8
+quantidade_parcelas = [6, 12, 18, 24, 30, 36, 42, 48, 54, 60]
+acrescimo_por_parcelas = {
+ 6: 0.03, 12: 0.06, 18: 0.09, 24: 0.12, 30: 0.15,
+ 36: 0.18, 42: 0.21, 48: 0.24, 54: 0.27, 60: 0.3
+}
+
+print("Tabela de Preços:")
+
+print(f"{'Parcelas':<10}{'Preço Final':<15}{'Valor da Parcela'}")
+
+for parcela in quantidade_parcelas:
+ acrescimo = acrescimo_por_parcelas.get(parcela, 0)
+ preco_final_parcelado = valor_carro * (1 + acrescimo)
+ valor_parcela = preco_final_parcelado / parcela
+
+ print(f"{parcela:<10}{preco_final_parcelado:.2f}<15{valor_parcela:.2f}")
+
+19.
+
+soma_idades = 0
+quantidade_idades = 0
+
+while True:
+ idade = int(input("Digite a idade (ou 0 para encerrar): "))
+
+ if idade == 0:
+ break # Encerra o loop quando a idade for igual a zero
+
+ soma_idades += idade
+ quantidade_idades += 1
+
+if quantidade_idades > 0:
+ media_idades = soma_idades / quantidade_idades
+
+ print(f"A média das idades é: {media_idades:.2f} anos")
+
+else:
+
+ print("Nenhuma idade foi digitada.")
+
+20.
+
+maior_valor = float("-inf")
+menor_valor = float("inf")
+while True:
+ valor = int(input("Digite um valor inteiro positivo (ou 0 para encerrar): "))
+
+
+ if valor < 0:
+ print("Valor negativo. Digite um valor inteiro positivo.")
+
+ elif valor == 0:
+ break # Encerra o loop quando for digitado zero
+
+ else:
+
+ if valor > maior_valor:
+ maior_valor = valor
+
+ if valor < menor_valor:
+ menor_valor = valor
+
+if maior_valor == float("-inf") or menor_valor == float("inf"):
+ print("Nenhum valor positivo foi digitado.")
+
+else:
+
+ print(f"O maior valor do conjunto é: {maior_valor}")
+ print(f"O menor valor do conjunto é: {menor_valor}")
+
+21.
+
+n = int(input("Digite um número inteiro para calcular o fatorial: "))
+fatorial = 1
+
+if n < 0:
+ print("Não é possível calcular o fatorial de um número negativo.")
+
+elif n == 0:
+ print(f"{n}! = 1")
+
+else:
+
+ for i in range(1, n + 1):
+ fatorial *= i
+
+ print(f"{n}! = {fatorial}")
+
+22.
+
+media_peso_1_10 = 0
+media_peso_11_20 = 0
+media_peso_21_30 = 0
+media_peso_31_mais = 0
+count_1_10 = 0
+count_11_20 = 0
+count_21_30 = 0
+count_31_mais = 0
+
+for i in range(15):
+ idade = int(input(f"Digite a idade da pessoa {i + 1}: "))
+ peso = float(input(f"Digite o peso da pessoa {i + 1} (em quilos): "))
+
+ if 1 <= idade <= 10:
+ media_peso_1_10 += peso
+ count_1_10 += 1
+
+ elif 11 <= idade <= 20:
+ media_peso_11_20 += peso
+ count_11_20 += 1
+
+ elif 21 <= idade <= 30:
+ media_peso_21_30 += peso
+ count_21_30 += 1
+
+ else:
+
+ media_peso_31_mais += peso
+ count_31_mais += 1
+
+if count_1_10 > 0:
+ media_peso_1_10 /= count_1_10
+
+if count_11_20 > 0:
+ media_peso_11_20 /= count_11_20
+
+if count_21_30 > 0:
+ media_peso_21_30 /= count_21_30
+
+if count_31_mais > 0:
+ media_peso_31_mais /= count_31_mais
+print(f"Média de peso para pessoas de 1 a 10 anos: {media_peso_1_10:.2f}
+kg")
+print(f"Média de peso para pessoas de 11 a 20 anos: {media_peso_11_20:.2f}
+kg")
+print(f"Média de peso para pessoas de 21 a 30 anos: {media_peso_21_30:.2f}
+kg")
+print(f"Média de peso para pessoas com mais de 30 anos:
+{media_peso_31_mais:.2f} kg")
+
+23.
+
+soma_idades_otimo = 0
+quantidade_otimo = 0
+quantidade_bom = 0
+
+for i in range(15):
+ idade = int(input(f"Digite a idade do espectador {i + 1}: "))
+ opiniao = int(input(f"Digite a opinião do espectador {i + 1} (ótimo - 3, bom - 2,
+regular - 1): "))
+
+ if opiniao == 3:
+ soma_idades_otimo += idade
+ quantidade_otimo += 1
+
+ elif opiniao == 2:
+ quantidade_bom += 1
+
+if quantidade_otimo > 0:
+ media_idades_otimo = soma_idades_otimo / quantidade_otimo
+
+else:
+
+ media_idades_otimo = 0
+
+print(f"Média de idades das pessoas que responderam 'ótimo':
+{media_idades_otimo:.2f} anos")
+
+print(f"Quantidade de pessoas que responderam 'bom': {quantidade_bom}")
+
+24.
+
+pessoas_sim = 0
+pessoas_nao = 0
+mulheres_sim = 0
+homens = 0
+homens_nao = 0
+
+for i in range(10):
+ sexo = input(f"Digite o sexo da pessoa {i + 1} (M - Masculino, F - Feminino):
+").upper()
+ resposta = input(f"Digite a resposta da pessoa {i + 1} (S - Sim, N - Não):
+").upper()
+
+ if resposta == "S":
+ pessoas_sim += 1
+
+ if resposta == "N":
+ pessoas_nao += 1
+
+ if sexo == "F" and resposta == "S":
+ mulheres_sim += 1
+
+ if sexo == "M":
+ homens += 1
+
+ if sexo == "M" and resposta == "N":
+ homens_nao += 1
+
+if homens > 0:
+ percentagem_homens_nao = (homens_nao / homens) * 100
+
+else:
+
+ percentagem_homens_nao = 0
+print(f"Número de pessoas que responderam 'sim': {pessoas_sim}")
+print(f"Número de pessoas que responderam 'não': {pessoas_nao}")
+print(f"Número de mulheres que responderam 'sim': {mulheres_sim}")
+print(f"Porcentagem de homens que responderam 'não':
+{percentagem_homens_nao:.2f}%")
+
+25.
+
+maior_nota = float("-inf")
+menor_nota = float("inf")
+total_alunos_reprovados = 0
+total_alunos = 10
+total_alunos_frequencia_inferior = 0
+
+for i in range(total_alunos):
+ matricula = input(f"Digite a matrícula do aluno {i + 1}: ")
+ nota1 = float(input("Digite a primeira nota: "))
+ nota2 = float(input("Digite a segunda nota: "))
+ nota3 = float(input("Digite a terceira nota: "))
+ frequencia = int(input("Digite o número de aulas frequentadas: "))
+
+ nota_final = (nota1 + nota2 + nota3) / 3
+
+ if nota_final >= 6 and frequencia >= 40:
+ mensagem = "Aprovado"
+ else:
+ mensagem = "Reprovado"
+ total_alunos_reprovados += 1
+
+ maior_nota = max(maior_nota, nota_final)
+ menor_nota = min(menor_nota, nota_final)
+ 
+if nota_final < 6 and frequencia < 40:
+ total_alunos_frequencia_inferior += 1
+
+print(f"Aluno: {matricula}, Nota Final: {nota_final:.2f}, {mensagem}")
+
+if total_alunos > 0:
+ porcentagem_reprovados_frequencia = (total_alunos_frequencia_inferior /
+total_alunos) * 100
+
+else:
+
+ porcentagem_reprovados_frequencia = 0
+print(f"Maior nota da turma: {maior_nota:.2f}")
+print(f"Menor nota da turma: {menor_nota:.2f}")
+print(f"Total de alunos reprovados: {total_alunos_reprovados}")
+print(f"Porcentagem de alunos reprovados por frequência abaixo da mínima:
+{porcentagem_reprovados_frequencia:.2f}%")
+
+26.
+
+soma_idades = 0
+quantidade_idades = 0
+while True:
+ idade = int(input("Digite a idade (ou 0 para encerrar): "))
+
+ if idade == 0:
+ break # Encerra o loop quando for digitado zero
+
+ soma_idades += idade
+ quantidade_idades += 1
+
+if quantidade_idades > 0:
+ media_idades = soma_idades / quantidade_idades
+
+else:
+
+media_idades = 0
+
+print(f"A média das idades digitadas é: {media_idades:.2f}")
+
+27.
+
+audiencia_canal_4 = 0
+audiencia_canal_5 = 0
+audiencia_canal_7 = 0
+audiencia_canal_12 = 0
+total_audiencia = 0
+
+while True:
+
+ canal = int(input("Digite o número do canal (4, 5, 7, 12) ou 0 para encerrar:
+"))
+
+ if canal == 0:
+ break # Encerra o loop quando for digitado zero
+
+ audiencia = int(input("Digite o número de pessoas assistindo: "))
+
+ if canal == 4:
+ audiencia_canal_4 += audiencia
+
+ elif canal == 5:
+ audiencia_canal_5 += audiencia
+
+ elif canal == 7:
+ audiencia_canal_7 += audiencia
+
+ elif canal == 12:
+ audiencia_canal_12 += audiencia
+
+ total_audiencia += audiencia
+
+if total_audiencia > 0:
+ percentagem_canal_4 = (audiencia_canal_4 / total_audiencia) * 100
+ percentagem_canal_5 = (audiencia_canal_5 / total_audiencia) * 100
+ percentagem_canal_7 = (audiencia_canal_7 / total_audiencia) * 100
+ percentagem_canal_12 = (audiencia_canal_12 / total_audiencia) * 100
+
+else:
+
+ percentagem_canal_4 = 0
+ percentagem_canal_5 = 0
+ percentagem_canal_7 = 0
+ percentagem_canal_12 = 0
+
+print(f"Porcentagem de audiência do canal 4: {percentagem_canal_4:.2f}%")
+print(f"Porcentagem de audiência do canal 5: {percentagem_canal_5:.2f}%")
+print(f"Porcentagem de audiência do canal 7: {percentagem_canal_7:.2f}%")
+print(f"Porcentagem de audiência do canal 12: {percentagem_canal_12:.2f}%")
+
+28.
+
+soma_salarios = 0
+soma_filhos = 0
+maior_salario = float("-inf")
+total_habitantes = 0
+total_salarios_ate_150 = 0
+while True:
+ salario = float(input("Digite o salário (ou salário negativo para encerrar): "))
+
+ if salario < 0:
+ break # Encerra o loop quando for inserido um salário negativo
+
+ filhos = int(input("Digite o número de filhos: "))
+
+ soma_salarios += salario
+ total_habitantes += 1
+
+ soma_filhos += filhos
+
+ if salario > maior_salario:
+ maior_salario = salario
+
+ if salario <= 150:
+ total_salarios_ate_150 += 1
+media_salario = soma_salarios / total_habitantes
+media_filhos = soma_filhos / total_habitantes
+porcentagem_salarios_ate_150 = (total_salarios_ate_150 / total_habitantes) *
+100
+
+print(f"Média do salário da população: R$ {media_salario:.2f}")
+
+print(f"Média do número de filhos: {media_filhos:.2f}")
+
+print(f"Maior salário: R$ {maior_salario:.2f}")
+
+print(f"Porcentagem de pessoas com salários até R$ 150,00:
+{porcentagem_salarios_ate_150:.2f}%")
+
+29.
+
+soma_salarios = 0
+maior_idade = float("-inf")
+menor_idade = float("inf")
+qtd_mulheres_salario_ate_200 = 0
+menor_salario = float("inf")
+menor_salario_idade = 0
+menor_salario_sexo = ""
+
+while True:
+ idade = int(input("Digite a idade (ou idade negativa para encerrar): "))
+
+ if idade < 0:
+ break # Encerra o loop quando for digitada uma idade negativa
+
+ sexo = input("Digite o sexo (M/F): ")
+ salario = float(input("Digite o salário: "))
+
+ soma_salarios += salario
+
+ if idade > maior_idade:
+ maior_idade = idade
+
+ if idade < menor_idade:
+ menor_idade = idade
+
+ if sexo == "F" and salario <= 200:
+ qtd_mulheres_salario_ate_200 += 1
+
+ if salario < menor_salario:
+ menor_salario = salario
+ menor_salario_idade = idade
+ menor_salario_sexo = sexo
+total_habitantes = max(1, total_habitantes)
+media_salarios = soma_salarios / total_habitantes
+
+print(f"Média dos salários do grupo: R$ {media_salarios:.2f}")
+
+print(f"Maior idade do grupo: {maior_idade} anos")
+
+print(f"Menor idade do grupo: {menor_idade} anos")
+
+print(f"Quantidade de mulheres com salário até R$ 200,00:
+{qtd_mulheres_salario_ate_200}")
+
+print(f"Pessoa com o menor salário: Idade: {menor_salario_idade} anos, Sexo:
+{menor_salario_sexo}")
+
+30.
+
+total_precos_com_aumento = 0
+total_precos_sem_aumento = 0
+total_produtos = 0
+while True:
+
+ codigo = int(input("Digite o código do produto (ou código negativo para
+encerrar): "))
+
+ if codigo < 0:
+ break # Encerra o loop quando for lido um código negativo
+
+ preco_custo = float(input("Digite o preço de custo do produto: "))
+
+ novo_preco = preco_custo * 1.2
+
+ total_precos_com_aumento += novo_preco
+ total_precos_sem_aumento += preco_custo
+ total_produtos += 1
+
+ print(f"Código do Produto: {codigo}, Novo Preço: R$ {novo_preco:.2f}")
+media_precos_com_aumento = total_precos_com_aumento / total_produtos
+media_precos_sem_aumento = total_precos_sem_aumento / total_produtos
+
+print(f"Média dos preços com aumento: R$ {media_precos_com_aumento:.2f}")
+
+print(f"Média dos preços sem aumento: R$ {media_precos_sem_aumento:.2f}")
+
+31.
+
+lucro_total = 0
+acoes_com_lucro_superior_1000 = 0
+acoes_com_lucro_inferior_200 = 0
+
+while True:
+ tipo_acao = input("Digite o tipo da ação (ou 'F' para encerrar): ")
+
+ if tipo_acao == 'F':
+ break # Encerra o loop quando o tipo de ação for 'F'
+
+ preco_compra = float(input("Digite o preço de compra da ação: "))
+ preco_venda = float(input("Digite o preço de venda da ação: "))
+
+ lucro_acao = preco_venda - preco_compra
+
+ lucro_total += lucro_acao
+
+ if lucro_acao > 1000:
+ acoes_com_lucro_superior_1000 += 1
+
+ acoes_com_lucro_inferior_200 += 1
+
+ print(f"Lucro da ação '{tipo_acao}': R$ {lucro_acao:.2f}")
+
+print(f"Quantidade de ações com lucro superior a R$ 1.000,00:
+{acoes_com_lucro_superior_1000}")
+
+print(f"Quantidade de ações com lucro inferior a R$ 200,00:
+{acoes_com_lucro_inferior_200}")
+
+print(f"Lucro total da empresa: R$ {lucro_total:.2f}")
+
+32.
+
+quantidade_numeros_inferiores_35 = 0
+soma_numeros_positivos = 0
+quantidade_numeros_positivos = 0
+quantidade_numeros_entre_50_e_100 = 0
+quantidade_numeros_entre_10_e_20 = 0
+total_numeros_digitados = 0
+
+while True:
+ numero = float(input("Digite um número (ou 0 para encerrar): "))
+
+ if numero == 0:
+ break # Encerra o loop quando for digitado 0
+
+ total_numeros_digitados += 1
+
+ if numero < 35:
+ quantidade_numeros_inferiores_35 += 1
+
+ if numero > 0:
+ soma_numeros_positivos += numero
+ quantidade_numeros_positivos += 1
+
+ if 50 <= numero <= 100:
+ quantidade_numeros_entre_50_e_100 += 1
+
+ if numero < 50 and 10 <= numero <= 20:
+ quantidade_numeros_entre_10_e_20 += 1
+media_numeros_positivos = soma_numeros_positivos / max(1,
+quantidade_numeros_positivos)
+porcentagem_numeros_entre_50_e_100 =
+(quantidade_numeros_entre_50_e_100 / total_numeros_digitados) * 100
+porcentagem_numeros_entre_10_e_20 =
+(quantidade_numeros_entre_10_e_20 / total_numeros_digitados) * 100
+print(f"Quantidade de números inferiores a 35:
+{quantidade_numeros_inferiores_35}")
+print(f"Média dos números positivos: {media_numeros_positivos:.2f}")
+print(f"Porcentagem de números entre 50 e 100:
+{porcentagem_numeros_entre_50_e_100:.2f}%")
+print(f"Porcentagem de números entre 10 e 20 entre os números menores que
+50: {porcentagem_numeros_entre_10_e_20:.2f}%")
+
+33.
+
+def calcular_media_aritmetica(nota1, nota2):
+ return (nota1 + nota2) / 2
+def calcular_media_ponderada(nota1, nota2, nota3, peso1, peso2, peso3):
+ return (nota1 * peso1 + nota2 * peso2 + nota3 * peso3) / (peso1 + peso2 +
+peso3)
+while True:
+ print("Menu de opções:")
+ print("1. Média aritmética")
+ print("2. Média ponderada")
+ print("3. Sair")
+ opcao = input("Digite a opção desejada: ")
+
+ if opcao == "1":
+ nota1 = float(input("Digite a primeira nota: "))
+ nota2 = float(input("Digite a segunda nota: "))
+ media_aritmetica = calcular_media_aritmetica(nota1, nota2)
+
+ print(f"Média aritmética: {media_aritmetica:.2f}")
+
+ elif opcao == "2":
+
+ nota1 = float(input("Digite a primeira nota: "))
+ nota2 = float(input("Digite a segunda nota: "))
+ nota3 = float(input("Digite a terceira nota: "))
+ peso1 = float(input("Digite o peso da primeira nota: "))
+ peso2 = float(input("Digite o peso da segunda nota: "))
+ peso3 = float(input("Digite o peso da terceira nota: "))
+ media_ponderada = calcular_media_ponderada(nota1, nota2, nota3,
+peso1, peso2, peso3)
+
+ print(f"Média ponderada: {media_ponderada:.2f}")
+ elif opcao == "3":
+ break
+ 
+else:
+
+print("Opção inválida. Por favor, escolha uma opção válida (1, 2 ou 3).")
+
+print("Programa encerrado.")
+
+34.
+
+votos_candidato1 = 0
+votos_candidato2 = 0
+votos_candidato3 = 0
+votos_candidato4 = 0
+votos_nulos = 0
+votos_em_branco = 0
+total_votos = 0
+
+while True:
+ voto = int(input("Digite o código do candidato (ou 0 para encerrar): "))
+
+ if voto == 0:
+ break
+ total_votos += 1
+
+ if voto == 1:
+ votos_candidato1 += 1
+ elif voto == 2:
+ votos_candidato2 += 1
+ elif voto == 3:
+ votos_candidato3 += 1
+ elif voto == 4:
+ votos_candidato4 += 1
+ elif voto == 5:
+ votos_nulos += 1
+ elif voto == 6:
+ votos_em_branco += 1
+
+ else:
+
+ print("Voto inválido. Os códigos válidos são 1, 2, 3, 4, 5 ou 6.")
+percentagem_votos_nulos = (votos_nulos / total_votos) * 100
+percentagem_votos_em_branco = (votos_em_branco / total_votos) * 100
+print(f"Total de votos para Candidato 1: {votos_candidato1}")
+print(f"Total de votos para Candidato 2: {votos_candidato2}")
+print(f"Total de votos para Candidato 3: {votos_candidato3}")
+print(f"Total de votos para Candidato 4: {votos_candidato4}")
+print(f"Total de votos nulos: {votos_nulos}")
+print(f"Total de votos em branco: {votos_em_branco}")
+
+print(f"Percentagem de votos nulos sobre o total de votos:
+{percentagem_votos_nulos:.2f}%")
+
+print(f"Percentagem de votos em branco sobre o total de votos:
+{percentagem_votos_em_branco:.2f}%")
+
+35.
+
+soma_positivos = 0
+soma_negativos = 0
+
+while True:
+ numero = int(input("Digite um número (ou 0 para encerrar): "))
+
+ if numero == 0:
+ break
+
+ if numero > 0:
+ soma_positivos += numero
+
+ else:
+
+ soma_negativos += numero
+soma_total = soma_positivos + soma_negativos
+print(f"Soma dos números positivos: {soma_positivos}")
+print(f"Soma dos números negativos: {soma_negativos}")
+print(f"Soma total das duas somas parciais: {soma_total}")
+
+36.
+
+soma_alturas = 0
+quantidade_pessoas = 0
+
+while True:
+ idade = int(input("Digite a idade (ou idade menor ou igual a zero para
+encerrar): "))
+
+ if idade <= 0:
+ break
+ altura = float(input("Digite a altura: "))
+
+ if idade > 50:
+ soma_alturas += altura
+ quantidade_pessoas += 1
+
+if quantidade_pessoas > 0:
+ media_alturas = soma_alturas / quantidade_pessoas
+
+ print(f"Média das alturas das pessoas com mais de 50 anos:
+{media_alturas:.2f}")
+
+else:
+
+ print("Nenhuma pessoa com mais de 50 anos foi registrada.")
+
+37.
+
+while True:
+ print("Menu de opções:")
+ print("1. Adição")
+ print("2. Subtração")
+ print("3. Multiplicação")
+ print("4. Divisão")
+ print("5. Sair")
+
+ opcao = input("Escolha a operação desejada (1/2/3/4/5): ")
+
+ if opcao == "5":
+ break
+
+ if opcao in ["1", "2", "3", "4"]:
+ numero1 = float(input("Digite o primeiro número: "))
+ numero2 = float(input("Digite o segundo número: "))
+
+ if opcao == "1":
+ resultado = numero1 + numero2
+
+ elif opcao == "2":
+ resultado = numero1 - numero2
+
+ elif opcao == "3":
+ resultado = numero1 * numero2
+
+ elif opcao == "4":
+
+ if numero2 != 0:
+ resultado = numero1 / numero2
+
+ else:
+
+ print("Não é possível dividir por zero.")
+ continue # Volta ao menu
+
+ print(f"Resultado: {resultado}")
+
+ else:
+
+ print("Opção inválida. Escolha uma opção válida (1, 2, 3, 4 ou 5).")
+
+print("Programa encerrado.")
+
+38.
+
+while True:
+ print("Menu de opções:")
+ print("1. Novo salário")
+ print("2. Férias")
+ print("3. Décimo terceiro")
+ print("4. Sair")
+
+ opcao = input("Escolha a operação desejada (1/2/3/4): ")
+
+ if opcao == "4":
+ break # Sai do loop se a opção 4 for escolhida
+
+ if opcao in ["1", "2", "3"]:
+ salario = float(input("Digite o salário do funcionário: "))
+
+ if opcao == "1":
+
+ if salario <= 350.00:
+ novo_salario = salario + (salario * 0.15)
+ elif 350.00 < salario <= 600.00:
+ novo_salario = salario + (salario * 0.10)
+
+ else:
+
+ novo_salario = salario + (salario * 0.05)
+
+ print(f"Novo salário: {novo_salario:.2f}")
+
+ elif opcao == "2":
+ ferias = salario + (salario / 3)
+
+ print(f"Valor das férias: {ferias:.2f}")
+
+ elif opcao == "3":
+ meses_trabalho = int(input("Digite o número de meses de trabalho (até
+12): "))
+ decimo_terceiro = (salario * meses_trabalho) / 12
+
+ print(f"Valor do décimo terceiro: {decimo_terceiro:.2f}")
+
+ else:
+
+ print("Opção inválida. Escolha uma opção válida (1, 2, 3 ou 4).")
+
+print("Programa encerrado.")
+
+39.
+
+total_investido = 0
+
+total_juros_pagos = 0
+
+while True:
+ codigo_cliente = int(input("Digite o código do cliente (digite <= 0 para
+encerrar): "))
+
+ if codigo_cliente <= 0:
+ break # Sai do loop se o código for menor ou igual a 0
+ tipo_conta = int(input("Digite o tipo da conta (1-Poupança, 2-Poupança Plus,
+3-Fundos de Renda Fixa): "))
+
+ valor_investido = float(input("Digite o valor investido: "))
+ rendimento_mensal = 0
+
+ if tipo_conta == 1:
+ rendimento_mensal = valor_investido * 0.015
+ 
+elif tipo_conta == 2:
+ rendimento_mensal = valor_investido * 0.02
+
+ elif tipo_conta == 3:
+ rendimento_mensal = valor_investido * 0.04
+ total_investido += valor_investido
+ total_juros_pagos += rendimento_mensal
+
+ print(f"Cliente {codigo_cliente}: Rendimento mensal de R$
+{rendimento_mensal:.2f}")
+
+print(f"Total investido: R$ {total_investido:.2f}")
+
+print(f"Total de juros pagos: R$ {total_juros_pagos:.2f}")

@@ -1,0 +1,388 @@
+Lista de atividade da UFBA
+
+1º 
+# Inicializa uma lista vazia
+lista_de_inteiros = []
+
+# Pede ao usuário para inserir 10 inteiros
+for i in range(10):
+    numero = int(input(f"Digite o número inteiro: "))
+    lista_de_inteiros.append(numero)
+
+# Imprime a lista na mesma linha
+print("Lista de inteiros:", end=" ")
+for numero in lista_de_inteiros:
+    print(numero, end=" ")
+
+# Pula uma linha no final
+print() 
+
+2º
+# Inicializa uma lista vazia
+lista_de_inteiros = []
+
+# Pede ao usuário para inserir 10 inteiros
+for i in range(10):
+    numero = int(input(f"Digite o número inteiro: "))
+    lista_de_inteiros.append(numero)
+
+# Pede ao usuário para inserir o número a ser verificado
+numero_verificar = int(input("Digite um número para verificar na lista: "))
+
+# Verifica se o número está na lista
+if numero_verificar in lista_de_inteiros:
+    print(f"O número {numero_verificar} está na lista.")
+else:
+    print(f"O número {numero_verificar} não está na lista.")
+
+3º
+
+# Inicializa as variáveis
+soma = 0
+
+# Inicializa com o menor valor possível
+maior = float('-inf')  
+
+# Inicializa com o maior valor possível
+menor = float('inf')   
+elementos_positivos = 0
+elementos_negativos = 0
+
+# Solicita ao usuário para inserir 10 números reais
+for i in range(10):
+    numero = float(input(f"Digite o número real: "))
+    
+    # Adiciona o número à soma
+    soma += numero  
+
+# Atualiza o maior elemento
+    if numero > maior:
+        maior = numero  
+
+ # Atualiza o menor elemento
+    if numero < menor:
+        menor = numero  
+
+    if numero > 0:
+        elementos_positivos += 1
+    elif numero < 0:
+        elementos_negativos += 1
+
+# Calcula a média dos elementos
+media = soma / 10
+
+# Imprime os resultados
+print(f"A média dos elementos é: {media:.2f}")
+print(f"O maior elemento é: {maior}")
+print(f"O menor elemento é: {menor}")
+print(f"Quantidade de elementos positivos: {elementos_positivos}")
+print(f"Quantidade de elementos negativos: {elementos_negativos}")
+
+4º
+# Inicializa as listas para armazenar nomes, idades e indenizações reajustadas
+nomes = []
+idades = []
+indenizacoes = []
+
+# Loop para inserir informações dos pacientes
+while True:
+    nome = input("Digite o nome do paciente: ")
+    
+    if nome == 'fim':
+        break
+    
+    idade = int(input("Digite a idade do paciente: "))
+    valor_base = float(input("Digite o valor base de indenização: "))
+    
+    # Calcula o reajuste de indenização com base na idade
+    if idade <= 12:
+        reajuste = 0.30 * valor_base
+    elif 13 <= idade <= 49:
+        reajuste = 0.10 * valor_base
+    elif 50 <= idade <= 65:
+        reajuste = 0.15 * valor_base
+    else:
+        reajuste = 0.35 * valor_base
+
+    # Adiciona informações às listas
+    nomes.append(nome)
+    idades.append(idade)
+    indenizacoes.append(valor_base + reajuste)
+
+# Imprime os resultados
+print("Resultados:")
+for i in range(len(nomes)):
+    print(f"Nome: {nomes[i]}, Idade: {idades[i]}, Indenização Reajustada: {indenizacoes[i]:.2f}")
+
+5º
+import math
+
+# Função para calcular a norma de um vetor
+def norma_do_vetor(vetor):
+    soma_quadrados = sum(x ** 2 for x in vetor)
+    norma = math.sqrt(soma_quadrados)
+    return norma
+
+# Tamanho dos vetores
+N = int(input("Digite o tamanho dos vetores: "))
+
+# Inicializa os vetores
+vetor1 = []
+vetor2 = []
+vetor3 = []
+
+# Pede ao usuário para inserir os elementos dos três vetores
+print("Digite os elementos do primeiro vetor:")
+for i in range(1):
+    elemento = float(input(f"Elemento: "))
+    vetor1.append(elemento)
+
+print("Digite os elementos do segundo vetor:")
+for i in range(1):
+    elemento = float(input(f"Elemento: "))
+    vetor2.append(elemento)
+
+print("Digite os elementos do terceiro vetor:")
+for i in range(1):
+    elemento = float(input(f"Elemento: "))
+    vetor3.append(elemento)
+
+# Calcula a norma de cada vetor
+norma_vetor1 = norma_do_vetor(vetor1)
+norma_vetor2 = norma_do_vetor(vetor2)
+norma_vetor3 = norma_do_vetor(vetor3)
+
+# Encontra o vetor com a maior norma
+maior_norma = max(norma_vetor1, norma_vetor2, norma_vetor3)
+vetor_com_maior_norma = None
+if maior_norma == norma_vetor1:
+    vetor_com_maior_norma = vetor1
+elif maior_norma == norma_vetor2:
+    vetor_com_maior_norma = vetor2
+else:
+    vetor_com_maior_norma = vetor3
+
+# Calcula o vetor soma dos três vetores
+vetor_soma = [x + y + z for x, y, z in zip(vetor1, vetor2, vetor3)]
+
+# Imprime os resultados
+print(f"Norma do vetor 1: {norma_vetor1}")
+print(f"Norma do vetor 2: {norma_vetor2}")
+print(f"Norma do vetor 3: {norma_vetor3}")
+print(f"O vetor com a maior norma é: {vetor_com_maior_norma}")
+print(f"Vetor Soma dos três vetores: {vetor_soma}")
+
+6º
+# Inicializa uma lista vazia para armazenar os dados dos clientes
+clientes = []
+
+# Loop para cadastrar clientes
+while True:
+    nome = input("Digite o nome completo do cliente: ")
+    
+    if nome.lower() == 'fim':
+        break
+    
+    rg = input("Digite o RG do cliente: ")
+    cpf = input("Digite o CPF do cliente: ")
+    telefone = input("Digite o telefone do cliente: ")
+    
+    # Cria um dicionário com os dados do cliente
+    cliente = {
+        "Nome Completo": nome,
+        "RG": rg,
+        "CPF": cpf,
+        "Telefone": telefone
+    }
+    
+    # Adiciona o dicionário à lista de clientes
+    clientes.append(cliente)
+
+# Imprime os detalhes de cada cliente
+print("Detalhes dos clientes:")
+for cliente in clientes:
+    print(f"Nome Completo: {cliente['Nome Completo']}")
+    print(f"RG: {cliente['RG']}")
+    print(f"CPF: {cliente['CPF']}")
+    print(f"Telefone: {cliente['Telefone']}")
+    print()
+
+7º
+# Inicializa uma lista vazia
+lista_de_inteiros = []
+
+# Pede ao usuário para inserir 10 elementos inteiros
+for i in range(10):
+    numero = int(input(f"Digite o número inteiro: "))
+    lista_de_inteiros.append(numero)
+
+# Inicializa um contador para valores pares
+contador_pares = 0
+
+# Percorre a lista e conta os valores pares
+for numero in lista_de_inteiros:
+    if numero % 2 == 0:
+        contador_pares += 1
+
+# Imprime a lista de elementos
+print("Lista de elementos:", lista_de_inteiros)
+
+# Imprime a quantidade de valores pares
+print(f"Quantidade de valores pares na lista: {contador_pares}")
+
+8º
+
+# Inicializa as listas para números pares e ímpares
+numeros_pares = []
+numeros_impares = []
+
+# Loop para ler os valores inteiros
+while True:
+    valor = int(input("Digite um valor inteiro: "))
+
+    if valor == 0:
+        break
+
+    if valor % 2 == 0:
+        numeros_pares.append(valor)
+    else:
+        numeros_impares.append(valor)
+
+    # Verifica se alguma das listas está cheia e a exibe
+    if len(numeros_pares) == 5:
+        print("Lista de números pares:", numeros_pares)
+        numeros_pares = []
+    if len(numeros_impares) == 5:
+        print("Lista de números ímpares:", numeros_impares)
+        numeros_impares = []
+
+# Exibe as listas restantes
+if numeros_pares:
+    print("Lista de números pares:", numeros_pares)
+if numeros_impares:
+    print("Lista de números ímpares:", numeros_impares)
+
+9º
+
+# Inicializa o gabarito
+gabarito = input("Digite o gabarito: ")
+
+# Inicializa a lista para armazenar os resultados
+resultados = []
+
+# Loop para ler as respostas dos alunos
+for i in range(50):
+    nome = input(f"Digite o nome do aluno: ")
+    respostas = input(f"Digite as respostas do aluno: ")
+
+    # Calcula o número de acertos do aluno
+    numero_acertos = sum(1 for g, r in zip(gabarito, respostas) if g == r)
+
+    # Calcula a nota final (cada questão correta vale 0,5 ponto)
+    nota_final = numero_acertos * 0.5
+
+    # Determina se o aluno foi aprovado ou reprovado
+    if nota_final >= 6:
+        situacao = "APROVADO"
+    else:
+        situacao = "REPROVADO"
+
+    # Adiciona os resultados à lista
+    resultados.append((nome, numero_acertos, nota_final, situacao))
+
+# Imprime os resultados para cada aluno
+for nome, acertos, nota, situacao in resultados:
+    print(f"Aluno: {nome}")
+    print(f"Número de acertos: {acertos}")
+    print(f"Nota Final: {nota}")
+    print(f"Situação: {situacao}")
+    print()
+
+10º
+
+# Inicializa o gabarito
+gabarito = input("Digite o gabarito com 20 elementos: ")
+
+# Inicializa a lista para armazenar os resultados
+resultados = []
+
+# Loop para ler as respostas dos alunos
+for i in range(50):
+    nome = input(f"Digite o nome do aluno: ")
+    respostas = input(f"Digite as respostas do aluno: ")
+
+    # Calcula o número de acertos do aluno
+    numero_acertos = sum(1 for g, r in zip(gabarito, respostas) if g == r)
+
+    # Calcula a nota final (cada questão correta vale 0,5 ponto)
+    nota_final = numero_acertos * 0.5
+
+    # Determina se o aluno foi aprovado ou reprovado
+    situacao = "APROVADO" if nota_final >= 6 else "REPROVADO"
+
+    # Armazena o nome e a nota final na lista de resultados
+    resultados.append((nome, nota_final, situacao))
+
+# Imprime os resultados para cada aluno
+for nome, nota, situacao in resultados:
+    print(f"Aluno: {nome}")
+    print(f"Nota Final: {nota}")
+    print(f"Situação: {situacao}")
+    print()
+
+11º
+
+# Inicializa a lista de números reais
+lista_numeros = []
+
+# Pede ao usuário para inserir os números
+for i in range(15):
+    numero = float(input(f"Digite o número real: "))
+    lista_numeros.append(numero)
+
+# Pede ao usuário para inserir o código
+codigo = int(input("Digite um código (0 para encerrar, 1 para ordem direta, 2 para ordem inversa): "))
+
+# Verifica o código e executa a ação correspondente
+if codigo == 0:
+    print("Programa encerrado.")
+elif codigo == 1:
+    print("Lista na ordem direta:")
+    for numero in lista_numeros:
+        print(numero, end=" ")
+    print()
+elif codigo == 2:
+    print("Lista na ordem inversa:")
+    for numero in reversed(lista_numeros):
+        print(numero, end=" ")
+    print()
+else:
+    print("Código inválido. Programa encerrado.")
+
+12º
+
+# Lê os números inteiros a e b
+a = int(input("Digite o valor de 'a': "))
+b = int(input("Digite o valor de 'b': "))
+
+# Lê o tamanho da lista
+N = int(input("Digite o tamanho da lista: "))
+
+# Inicializa a lista
+lista = []
+
+# Pede ao usuário para inserir os elementos da lista
+for i in range(N):
+    elemento = int(input(f"Digite o elemento da lista: "))
+    lista.append(elemento)
+
+# Inicializa um contador para a contagem
+contagem = 0
+
+# Conta quantos elementos estão no intervalo [a, b]
+for elemento in lista:
+    if a <= elemento <= b:
+        contagem += 1
+
+# Exibe a contagem
+print(f"A contagem de elementos no intervalo [{a}, {b}] é: {contagem}")
